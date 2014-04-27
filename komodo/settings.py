@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'komodo',
+    'bleach',
 )
 
 MIDDLEWARE_CLASSES = (

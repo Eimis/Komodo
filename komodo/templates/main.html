@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Komodo</title>
+	<link rel="stylesheet" href="{{ STATIC_URL }}main.css" content-type: text/css/>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="wrap">
+		<div class="logo"><p>Komodo</p></div>
+		<br>
+		<form class="form-wrapper cf" action="/search/g/" method="post">
+		{% csrf_token %}
+			<input type="text" placeholder="Search /g/" name = "q" required>
+			<button type="submit">Search</button>
+		</form>  
+	</div>
+</body>
+</html>

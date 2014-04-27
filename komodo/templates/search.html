@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Komodo</title>
+	<link rel="stylesheet" href="{{ STATIC_URL }}main.css" content-type: text/css/>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="wrap">
+		<div class="logo"><p>Komodo</p></div>
+		<br>
+		Query: {{ q }}<br><br>
+		<br>
+		{{ testy }}
+		<br><br>{{ testy2 }}
+		<b>Matching result list:</b><br><br>
+		{{ matching }}<br><br>
+		<b>Result list:</b> <br><br>
+		{% for com in result_list %}
+		{{ com  | safe}} <br><br> <hr>
+		{% endfor %}
+		<br><br>
+
+		
+
+
+	</div>
+</body>
+</html>
