@@ -9,18 +9,19 @@
 <body>
 	<div class="wrap">
 		<div class="logo"><p>Komodo</p></div>
+		<div class="post">
 		<br>
-		Query: {{ q }}<br><br>
+		Your query: <b>{{ q }}</b><br><br>
 		<br>
-		{{ testy }}
-		<br><br>{{ testy2 }}
-		<b>Matching result list:</b><br><br>
-		{{ matching }}<br><br>
-		<b>Result list:</b> <br><br>
-		{% for com in result_list %}
-		{{ com  | safe}} <br><br> <hr>
+		<b>Results({{ results }}):</b><br>
+		{% for post, link in matching %}
+		<p>{{ post | safe }}</p>
+		<br>
+		<a href="http://boards.4chan.org/{{ slug }}/thread/{{ link }}">Link to this post</a>
+		<br>
+		<hr>
 		{% endfor %}
-		<br><br>
+		</div>
 
 		
 

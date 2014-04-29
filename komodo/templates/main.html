@@ -10,9 +10,9 @@
 	<div class="wrap">
 		<div class="logo"><p>Komodo</p></div>
 		<br>
-		<form class="form-wrapper cf" action="/search/g/" method="post">
+		<form class="form-wrapper cf" action="/{{ slug }}results/" method="post">
 		{% csrf_token %}
-			<input type="text" placeholder="Search /g/" name = "q" required>
+			<input type="text" placeholder="Search /{{ slug }}" name = "q" required>
 			<button type="submit">Search</button>
 		</form>  
 	</div>

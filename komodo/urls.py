@@ -5,8 +5,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^$', Main),
-	url(r'^search/g/$', Search), 
+	url(r'^(?P<slug>[-\w]+/)$', Main),
+	url(r'^(?P<slug>[-\w]+)/results/$', Search), 
 
 
     url(r'^admin/', include(admin.site.urls)),
