@@ -88,8 +88,9 @@ a.boardsLink:hover{color: #BF0000; font-weight: bold; text-decoration: none;}
 .logo{
 	margin-left: auto;
 	margin-right: auto;
-	width: 15%;
+	width: auto;
 	height: auto;
+    text-align: center;
 }
 
 .logo p{
