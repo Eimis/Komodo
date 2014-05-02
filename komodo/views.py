@@ -27,3 +27,4 @@ def Search(request, slug):
 	matching = [(post, link) for post, link in thread_list if post is not None and q.lower() in post.lower()] # not None - some threads only contain images (no text) and None = False in Python
 	results = len(matching)
 	return render(request, 'search.html',{"q" : q, "result_list" : result_list, "data" : data, "matching" : matching, "thread_list" : thread_list, "slug" : slug, "results" : results})
+

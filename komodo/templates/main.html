@@ -5,16 +5,137 @@
 	<title>Komodo</title>
 	<link rel="stylesheet" href="{{ STATIC_URL }}main.css" content-type: text/css/>
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script src="{{ STATIC_URL }}jquery-ui-1.10.4.custom.js"></script>
+	<script src="{{ STATIC_URL }}komodo.js"></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
 </head>
 <body>
 	<div class="wrap">
-		<div class="logo"><p>Komodo</p></div>
+		<a href="http://komodo.lynxapp.io">
+			<div class="logo">
+				<p>Komodo</p>
+			</div>
+		</a>
+
+		{% block infoboxes %}
+		<p><a href="#" class="howLink">How it works?</a></p>
+		<div class = "how">
+			<img src="/static/bar.png"></img>
+		</div>
+
+		<p><a href="#" class="boardsLink">Board list</a></p>
+		<div class = "boards">
+			<div class="tableWrap">
+			<table class="boardsTable" align = "center">
+				<div><tr class = "row">
+					<td class="top"><p><b>Japanese culture</b></p></td>
+					<td class="cell top"><p><b>Interests</p></td> 
+					<td class="cell top"><p><b>Creative</b></p></td>
+					<td class="cell top"><p><b>Adult</b></p></td>
+					<td class="cell top"><p><b>Other</b></p></td>
+					<td class="cell last top"><p><b>Misc.</span></b></p></td>
+				</tr>
+				<tr>
+					<td class="cell lastRow">
+						<p>Anime & Manga - /a/</p>
+						<p>Anime/Cute - /c/</p>
+						<p>Anime/Wallpapers - /w/</p>
+						<p>Mecha - /m/</p>
+						<p>Cosplay & EGL - /cgl/</p>
+						<p>Cute/Male - /cm/</p>
+						<p>Flash - /f/</p>
+						<p>Transportation - /n/</p>
+						<p>Otaku Culture - /jp/</p>
+						<p>Pokemon - /vp/</p>
+					</td>
+					<td class="cell lastRow">
+						<p>Video Games - /v/</p>
+						<p>Video Game Generals - /vg/</p>
+						<p>Retro Games - /vr/</p>
+						<p>Comics & Cartoons - /co/</p>
+						<p>Technology - /g/</p>
+						<p>Television and Film - /tv/</p>
+						<p>Weapons - /k/</p>
+						<p>Auto - /o/</p>
+						<p>Animals and Nature - /an/</p>
+						<p>Traditional Games - /tg/</p>
+						<p>Sports - /sp/</p>
+						<p>Alternative Sports - /asp/</p>
+						<p>Science & Math - /sci/</p>
+						<p>International - /int/</p>
+						<p>Outdoors - /out/</p>
+						<p>Toys - /toy/</p>
+						<p>Business and Finance - /biz/</p>
+					</td> 
+					<td class="cell lastRow">
+						<p>Oekaki - /i/</p>
+						<p>Papercraft & Origami - /po/</p>
+						<p>Photography - /p/</p>
+						<p>Food and Cooking - /ck/</p>
+						<p>Artwork/Critique - /ic/</p>
+						<p>Wallpapers/General - /wg/</p>
+						<p>Music - /mu/</p>
+						<p>Fashion - /fa/</p>
+						<p>3DCG - /3/</p>
+						<p>Graphic Design - /gd/</p>
+						<p>Do-It-Yourself - /diy/</p>
+						<p>Worksafe GIF - /wsg/</p>
+					</td>
+					<td class="cell lastRow">
+						<p>Sexy Beautiful Women - /s/</p>
+						<p>Hardcore - /hc/</p>
+						<p>Handsome Men - /hm/</p>
+						<p>Hentai - /h/</p>
+						<p>Ecchi - /e/</p>
+						<p>Yuri - /u/</p>
+						<p>Hentai/Alternative - /d/</p>
+						<p>Yaoi - /y/</p>
+						<p>Torrents - /t/</p>
+						<p>High Resolution - /hr/</p>
+						<p>Adult GIF - /gif/</p>
+					</td>
+					<td class="cell lastRow">
+						<p>Travel - /trv/</p>
+						<p>Fitness - /fit/</p>
+						<p>Paranormal - /x/</p>
+						<p>Literature - /lit/</p>
+						<p>Advice - /adv/</p>
+						<p>LGBT - /lgbt/</p>
+						<p>Pony - /mlp/</p>
+					</td>
+					<td class="cell last lastRow">
+						<p>Random - /b/</p>
+						<p>Request - /r/</p>
+						<p>ROBOT9001 - /r9k/</p>
+						<p>Politically Incorrect - /pol/</p>
+						<p>Calms and Meetups - /soc/</p>
+						<p>Shit 4chan Says - /s4s/</p>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+		</div>
+		{% endblock %}
+
 		<br>
+
+		{% block searchbox %}
 		<form class="form-wrapper cf" action="/{{ slug }}results/" method="post">
-		{% csrf_token %}
+			{% csrf_token %}
 			<input type="text" placeholder="Search /{{ slug }}" name = "q" required>
 			<button type="submit">Search</button>
-		</form>  
+		</form>
+		{% endblock %}
+
+		{% block error %}
+		{% endblock %}
+
+		{% block results %}
+		{% endblock %}
 	</div>
 </body>
 </html>

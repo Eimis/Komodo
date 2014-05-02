@@ -1,31 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Komodo</title>
-	<link rel="stylesheet" href="{{ STATIC_URL }}main.css" content-type: text/css/>
-	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-</head>
-<body>
-	<div class="wrap">
-		<div class="logo"><p>Komodo</p></div>
-		<div class="post">
-		<br>
-		Your query: <b>{{ q }}</b><br><br>
-		<br>
-		<b>Results({{ results }}):</b><br>
-		{% for post, link in matching %}
-		<p>{{ post | safe }}</p>
-		<br>
-		<a href="http://boards.4chan.org/{{ slug }}/thread/{{ link }}">Link to this post</a>
-		<br>
+{% extends "main.html" %}
+
+
+
+
+{% block results %}
+<div class="postWrap">
+	<br>
+	Your query: <b>{{ q }}</b><br>
+	<br>
+	<b>Results({{ results }}):</b><br><br>
+	{% for post, link in matching %}
+	<div class="post">
+		<a href="http://boards.4chan.org/{{ slug }}/thread/{{ link }}" target="_blank">
+			<i class="fa fa-external-link-square linkIcon"></i>
+			Link to this post
+		</a>
 		<hr>
-		{% endfor %}
-		</div>
-
+		<p>{{ post | safe }}</p>
 		
-
-
 	</div>
-</body>
-</html>
+	<br>
+	{% endfor %}
+</div>
+{% endblock %}
