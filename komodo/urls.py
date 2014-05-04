@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from komodo.views import Main, Search
 from django.views.generic import RedirectView
-from django.conf.urls.defaults import handler404, handler500
+from django.conf.urls import handler404, handler500
 from django.contrib import admin
 admin.autodiscover()
 
