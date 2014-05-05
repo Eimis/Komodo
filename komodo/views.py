@@ -28,3 +28,9 @@ def Search(request, slug):
 	results = len(matching)
 	return render(request, 'search.html',{"q" : q, "result_list" : result_list, "data" : data, "matching" : matching, "thread_list" : thread_list, "slug" : slug, "results" : results})
 
+def server_error(request):
+	# for some reason Django doesn't pass template variables ONLY to error500 page, so this view is required for serving static files for this page
+    response = render(request, "500.html",{})
+    response.status_code = 500
+    return response
+
